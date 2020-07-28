@@ -77,3 +77,61 @@ a = 'a'
 
 const a = 'b'
 a = 'a'
+
+
+// ARROW FUNCTIONS, PROMESAS Y PARÁMETROS DE OBJETOS
+/////////////////////////////////////////
+
+
+// Parámetros de objetos
+//////
+let name = 'Israel'
+let age = 35
+
+// ES5
+obj = { name: name, age: age}
+
+// ES6
+obj2 = { name, age }
+console.log(obj2)
+
+
+// Arrow Functions
+//////
+const names = [
+    {name: 'Israel', age: 35},
+    {name: 'Francisco', age: 40}
+]
+
+let listOfNames = names.map(function (item) {
+    console.log(item.name)
+})
+
+let listOfNames2 = names.map(item => console.log(item.name))
+
+const listOfNames3 = (name, age, country) => {
+    //...
+}
+
+const listOfNames4 = name => {
+    //...
+}
+
+const square = num => num * num
+
+
+// Promesas
+///////
+const helloPromise = () => {
+    return new Promise((resolve, reject) => {
+        if (true) {
+            resolve ('Hey')
+        } else {
+            reject ('Ups!!')
+        }
+    })
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
